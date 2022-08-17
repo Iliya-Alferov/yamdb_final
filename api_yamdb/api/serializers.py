@@ -2,7 +2,7 @@ from rest_framework import serializers
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import get_user_model
 from reviews.models import Title, Category, Genre, Comment
-from reviews.models import Review, Title
+from reviews.models import Review
 
 User = get_user_model()
 
