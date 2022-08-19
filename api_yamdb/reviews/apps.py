@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class TitlesConfig(AppConfig):
-    name = 'rewiews'
+    name = 'reviews'
