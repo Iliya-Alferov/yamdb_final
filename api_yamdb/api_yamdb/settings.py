@@ -1,3 +1,4 @@
+from email.policy import default
 import os
 from dotenv import load_dotenv
 
@@ -10,11 +11,11 @@ load_dotenv()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY', default='p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs')
 #SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int(os.getenv('DEBUG', '1')))
-#DEBUG = False
+#DEBUG = bool(int(os.getenv('DEBUG', '1')))
+DEBUG = False
 
 ALLOWED_HOSTS = ['*',
                  '127.0.0.1',
