@@ -2,7 +2,7 @@ FROM python:3.7-slim
 
 WORKDIR /app
 
-#COPY ./requirements.txt .
+COPY C:/Dev/yamdb_final/api_yamdb/requirements.txt .
 
 #RUN pip install --requirements requirements.txt
 
