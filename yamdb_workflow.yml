@@ -45,7 +45,7 @@ jobs:
           uses: docker/build-push-action@v2
           with:
             push: true
-            tags: iliyaalferov2015/infra_sp2
+            tags: iliyaalferov2015/yamdb_final:v4
 
 
   deploy:
@@ -59,9 +59,13 @@ jobs:
             username: ${{ secrets.USER }}
             key: ${{ secrets.SSH_KEY }}
             passphrase: ${{ secrets.PASSPHRASE }}
+            stack_file_name: docker-compose.yaml
             script: |
-              sudo docker compose stop
-              sudo docker compose rm web
+              sudo docker pull iliyaalferov2015/yamdb_final:v4
+              sudo docker stop $(sudo docker ps -a -q)
+              #sudo docker rm web
+              sudo docker conteiner prune
+              sudo docker compose up -d
               touch .env
               echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
               echo DB_NAME=${{ secrets.DB_NAME }} >> .env
