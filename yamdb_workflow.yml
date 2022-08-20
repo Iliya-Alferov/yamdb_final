@@ -45,7 +45,7 @@ jobs:
           uses: docker/build-push-action@v2
           with:
             push: true
-            tags: iliyaalferov2015/yamdb_final:v4
+            tags: iliyaalferov2015/yamdb_final:v5
 
 
   deploy:
@@ -61,7 +61,7 @@ jobs:
             passphrase: ${{ secrets.PASSPHRASE }}
             stack_file_name: docker-compose.yaml
             script: |
-              sudo docker pull iliyaalferov2015/yamdb_final:v4
+              sudo docker pull iliyaalferov2015/yamdb_final:v5
               sudo docker stop $(sudo docker ps -a -q)
               #sudo docker rm web
               sudo docker conteiner prune
