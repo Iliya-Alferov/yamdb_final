@@ -48,7 +48,8 @@ jobs:
           uses: docker/build-push-action@v2
           with:
             push: true
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/yamdb_final:v2.08.22
+            context: ./api_yamdb/
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/yamdb_final:latest
 
 
   deploy:
