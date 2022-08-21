@@ -49,7 +49,7 @@ jobs:
           with:
             push: true
             context: ./api_yamdb/
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/yamdb_final:v5.08.2022
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/yamdb_final:v6.08.2022
 
 
   deploy:
@@ -65,7 +65,7 @@ jobs:
             passphrase: ${{ secrets.PASSPHRASE }}
             stack_file_name: docker compose.yaml
             script: |
-              sudo docker pull iliyaalferov2015/yamdb_final:v5.08.2022
+              sudo docker pull iliyaalferov2015/yamdb_final:v6.08.2022
               sudo docker stop $(sudo docker ps -a -q)
               #sudo docker rm web
               sudo docker conteiner prune
