@@ -49,7 +49,7 @@ jobs:
           with:
             push: true
             context: ./api_yamdb/
-            tags: ${{ secrets.DOCKERHUB_USERNAME }}/yamdb_final:v5
+            tags: ${{ secrets.DOCKERHUB_USERNAME }}/yamdb_final:v5.08.2022
 
 
   deploy:
@@ -63,13 +63,12 @@ jobs:
             username: ${{ secrets.USER }}
             key: ${{ secrets.SSH_KEY }}
             passphrase: ${{ secrets.PASSPHRASE }}
-            stack_file_name: docker-compose.yaml
+            stack_file_name: docker compose.yaml
             script: |
-              sudo docker pull iliyaalferov2015/yamdb_final:v5
+              sudo docker pull iliyaalferov2015/yamdb_final:v5.08.2022
               sudo docker stop $(sudo docker ps -a -q)
               #sudo docker rm web
               sudo docker conteiner prune
-              sudo docker compose up -d
               touch .env
               echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
               echo DB_NAME=${{ secrets.DB_NAME }} >> .env
@@ -77,7 +76,7 @@ jobs:
               echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
               echo DB_HOST=${{ secrets.DB_HOST }} >> .env
               echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-              sudo docker-compose up -d
+              sudo docker compose up -d
             
       
   send_message:
