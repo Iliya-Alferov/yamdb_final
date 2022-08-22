@@ -16,9 +16,9 @@ SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 # DEBUG = bool(int(os.getenv('DEBUG', '1')))
 DEBUG = True
 
-ALLOWED_HOSTS = ['158.160.9.18',
-                 '127.0.0.1',
+ALLOWED_HOSTS = ['127.0.0.1',
                  'localhost',
+                 '84.201.137.225'
                  'web',
                  ]
 
