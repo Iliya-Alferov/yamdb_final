@@ -64,8 +64,7 @@ jobs:
             stack_file_name: docker compose.yaml
             script: |
               sudo docker pull iliyaalferov2015/yamdb_final:v7.08.2022
-              sudo docker compose stop
-              sudo docker compose rm web
+              sudo docker stop $(sudo docker ps -a -q)
               touch .env
               echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
               echo DB_NAME=${{ secrets.DB_NAME }} >> .env
