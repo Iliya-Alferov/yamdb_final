@@ -74,7 +74,7 @@ sudo docker container ls
 Создаем superuser в контейнере web.
 
 ~~~
-sudo docer exex -it <container_id> python manage.py createsuperuser
+sudo docker exec -it <container_id> python manage.py createsuperuser
 ~~~
 
 Войдите в админку.
