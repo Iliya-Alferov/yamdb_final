@@ -23,11 +23,11 @@ jobs:
 
     - name: Test whith flake8
       run: |
-        #python -m flake8
+        python -m flake8
 
-    # - name: Test django
-     # run: |
-      #  pytest
+    - name: Test django
+      run: |
+        pytest
 
   build_and_push_to_docker_hub:
       name: Push Docker image to Docker Hub
